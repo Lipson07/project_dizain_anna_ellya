@@ -1,0 +1,74 @@
+.catalog {
+  width: 100%;
+  height: 100%;
+  background-color: #eee5d7;
+
+  .catalogheader {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 20%;
+    position: relative;
+    top: 100px;
+    .catalogheadercont1 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 100%;
+      img {
+        width: 43%;
+        height: 2px;
+      }
+      h1 {
+        font-size: 50px;
+        width: 35%;
+        position: relative;
+        left: 50px;
+        top: -10px;
+      }
+    }
+    .catalogheadercont2 {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      align-items: center;
+      width: 1500px;
+      position: relative;
+      left: -50px;
+      margin-top: 20px;
+      h1 {
+        font-family: serif;
+        font-size: 25px;
+        margin-left: 150px;
+      }
+    }
+  }
+  .card {
+    height: 120%;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    margin-top: 100px;
+
+    .cardcont {
+      width: 1500px;
+      display: flex;
+      flex-wrap: wrap;
+      position: relative;
+      left: 200px;
+      .cardimg {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 300px;
+        height: 500px;
+        background-color: aqua;
+        margin: 100px;
+      }
+    }
+  }
+}

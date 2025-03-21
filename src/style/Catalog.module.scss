@@ -45,6 +45,10 @@
         font-size: 25px;
         margin-left: 150px;
       }
+      img {
+        position: relative;
+        left: -200px;
+      }
     }
   }
   .card {
@@ -63,24 +67,27 @@
       left: 200px;
       .cardimg {
         display: flex;
+        border-radius: 20px;
         justify-content: center;
         flex-direction: column;
         align-items: center;
         width: 300px;
-        height: 600px;
+        height: 650px;
         background-color: #f6f3e2;
         margin: 100px;
         .item {
           position: relative;
           width: 300px;
           height: 400px;
-          top: -55px;
+          top: -50px;
+          border-radius: 20px 20px 0px 0px;
         }
         .like {
           z-index: 3;
           position: relative;
           left: 100px;
           cursor: pointer;
+          fill: bla;
         }
         .textcont {
           position: relative;
@@ -101,13 +108,14 @@
         button {
           width: 100px;
           height: 50px;
-          background-color: #8192a8;
+          background-color: #eddac7;
           position: relative;
           top: -20px;
           border-radius: 15px;
+          border: 2px #c18c80 solid;
         }
         button:hover {
-          background-color: #a0abba;
+          background-color: #ece4db;
         }
       }
     }

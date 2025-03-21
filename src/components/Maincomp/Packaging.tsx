@@ -1,6 +1,7 @@
 import React, { FC } from "react";
 import main from "../../style/main.module.scss";
 import { line, p1, p2, p3, star, arrow } from "../../assets/main";
+import { Link } from "react-router";
 const Packaging = () => {
   return (
     <div className={main.packaging}>
@@ -39,7 +40,9 @@ const Packaging = () => {
             Стоимость доставки рассчитывается исходя из итогового веса.
           </p>
           <img src={arrow} className={main.arrow} alt="" />
-          <button>Подробнее о доставке</button>
+          <Link to="/delivery">
+            <button>Подробнее о доставке</button>
+          </Link>
         </div>
       </div>
     </div>

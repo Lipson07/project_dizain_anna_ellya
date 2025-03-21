@@ -7,6 +7,8 @@ import "@fontsource/italiana";
 import Main from "./components/pages/Main";
 import Footer from "./components/Footer";
 import Catalog from "./components/pages/Catalog";
+import Moredost from "./components/pages/Moredost";
+import More from "./components/pages/More";
 const App: FC = () => {
   return (
     <div className="App">
@@ -14,6 +16,8 @@ const App: FC = () => {
       <Routes>
         <Route path="/" element={<Main />} />
         <Route path="/catalog" element={<Catalog />} />
+        <Route path="/delivery" element={<Moredost />} />
+        <Route path="/more" element={<More />} />
       </Routes>
       <Footer />
     </div>

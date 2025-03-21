@@ -4,6 +4,8 @@ import catalog from "../../style/Catalog.module.scss";
 import Card from "../Catalogcomp/Card";
 import { useDispatch, useSelector } from "react-redux";
 import { setCategory, selectCategory } from "../../store/index";
+import { Link } from "react-router";
+import vector from "../../assets/card/Vector (3).png";
 const Catalog = () => {
   const dispatch = useDispatch();
   const category = useSelector(selectCategory);
@@ -20,28 +22,32 @@ const Catalog = () => {
           <h1>Каталог</h1>
           <img src={line} />
         </div>
+
         <div className={catalog.catalogheadercont2}>
+          <Link to="/">
+            <img src={vector} />
+          </Link>
+          <h1
+            className={category == 0 ? "ssss" : " "}
+            onClick={() => handleCategoryClick(0)}
+          >
+            Свечи
+          </h1>
           <h1
             className={category == 1 ? "ssss" : " "}
             onClick={() => handleCategoryClick(1)}
           >
-            Свечи
+            Подарочные наборы
           </h1>
           <h1
             className={category == 2 ? "ssss" : " "}
             onClick={() => handleCategoryClick(2)}
           >
-            Подарочные наборы
+            Диффузор для дома
           </h1>
           <h1
             className={category == 3 ? "ssss" : " "}
             onClick={() => handleCategoryClick(3)}
-          >
-            Диффузор для дома
-          </h1>
-          <h1
-            className={category == 4 ? "ssss" : " "}
-            onClick={() => handleCategoryClick(4)}
           >
             Подставки
           </h1>

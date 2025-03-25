@@ -9,6 +9,7 @@ import Footer from "./components/Footer";
 import Catalog from "./components/pages/Catalog";
 import Moredost from "./components/pages/Moredost";
 import More from "./components/pages/More";
+import Corzina from "./components/pages/Corzina";
 const App: FC = () => {
   return (
     <div className="App">
@@ -18,6 +19,7 @@ const App: FC = () => {
         <Route path="/catalog" element={<Catalog />} />
         <Route path="/delivery" element={<Moredost />} />
         <Route path="/more" element={<More />} />
+        <Route path="/corzina" element={<Corzina />} />
       </Routes>
       <Footer />
     </div>

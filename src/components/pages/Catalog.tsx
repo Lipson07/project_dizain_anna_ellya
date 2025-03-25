@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { FC, useEffect } from "react";
 import { line } from "../../assets/main";
 import catalog from "../../style/Catalog.module.scss";
 import Card from "../Catalogcomp/Card";
@@ -6,7 +6,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { setCategory, selectCategory } from "../../store/index";
 import { Link } from "react-router";
 import vector from "../../assets/card/Vector (3).png";
-const Catalog = () => {
+const Catalog: FC = () => {
   const dispatch = useDispatch();
   const category = useSelector(selectCategory);
 
@@ -53,7 +53,7 @@ const Catalog = () => {
           </h1>
         </div>
       </div>
-      <Card />
+      <Card  />
     </div>
   );
 };

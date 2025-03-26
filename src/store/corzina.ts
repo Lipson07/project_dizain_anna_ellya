@@ -4,7 +4,10 @@ import { cost } from "../assets/card";
 interface CorzinaState {
   id: { categ: number; index: number; cost: number };
   prid: string[];
-  tovars: { id: { categ: number; index: number }; cossts: number }[];
+  tovars: {
+    id: { categ: number; index: number; cost: number };
+    cossts: number;
+  }[];
 }
 
 const initialState: CorzinaState = {
@@ -32,13 +35,32 @@ const CorzinaSlice = createSlice({
       );
 
       if (index !== -1) {
-        state.tovars[index].cossts = cost;
+        state.tovars[index].id.cost = cost;
       }
     },
 
-    SetTovars: (state: CorzinaState, action: PayloadAction<any>) => {
-      state.tovars.push(action.payload);
+    SetTovars: (
+      state: CorzinaState,
+      action: PayloadAction<{
+        id: { categ: number; index: number; cost: number };
+        cossts: number;
+
+        initialCost: number;
+      }>
+    ) => {
+      const existingTovarIndex = state.tovars.findIndex(
+        (tovar) =>
+          tovar.id.categ === action.payload.id.categ &&
+          tovar.id.index === action.payload.id.index
+      );
+
+      if (existingTovarIndex !== -1) {
+        state.tovars[existingTovarIndex].cossts += action.payload.cossts;
+      } else {
+        state.tovars.push(action.payload);
+      }
     },
+
     SetDelete: (state: CorzinaState, action: PayloadAction<any>) => {
       state.tovars.splice(action.payload, 1);
     },
@@ -57,5 +79,6 @@ export const selectTovars = (state: { corzina: CorzinaState }) =>
   state.corzina.tovars;
 export const selectPrid = (state: { corzina: CorzinaState }) =>
   state.corzina.prid;
-
+export const selectCost = (state: { corzina: CorzinaState }) =>
+  state.corzina.tovars.reduce((acc, tovar) => acc + tovar.id.cost, 0);
 export default CorzinaSlice.reducer;

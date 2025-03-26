@@ -72,6 +72,8 @@ const Korzina: FC = () => {
                 pss={pss}
                 item={item}
                 index={index}
+                cost={id.cost}
+                init={item.initialCost}
               />
             );
           })}

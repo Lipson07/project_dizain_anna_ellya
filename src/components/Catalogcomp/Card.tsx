@@ -60,7 +60,12 @@ const Card: FC = () => {
       return; // Если есть, выходим
     }
 
-    const newTovar = { id }; // Формируем объект товара
+    const newTovar = {
+      id: { categ: category, index: index, cost: cost },
+      cossts: cost,
+
+      initialCost: cost,
+    }; // Формируем объект товара
     dispatch(SetTovars(newTovar)); // Добавляем товар в Redux
   };
 

@@ -4,7 +4,11 @@ import { line } from "../../assets/main";
 import vector from "../../assets/card/Vector (3).png";
 import { Link } from "react-router";
 import Korzina from "../Korzina/Korzina";
+import { useSelector } from "react-redux";
+import { selectId, selectTovars, selectCost } from "../../store/corzina";
 const Corzina: FC = () => {
+  const tovar = useSelector(selectTovars);
+  const cost = useSelector(selectCost);
   return (
     <div className={corzina.corzina}>
       <div className={corzina.corzinaheader}>
@@ -22,7 +26,7 @@ const Corzina: FC = () => {
 
       <div className={corzina.corzinacont}>
         <Korzina />
-        <h1>Сумма к оплате:</h1>
+        <h1>Сумма к оплате: {cost}</h1>
         <button>Оформить заказ</button>
       </div>
     </div>
